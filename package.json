@@ -1,0 +1,20 @@
+{
+  "name": "desafios",
+  "version": "1.0.0",
+  "description": "Desafios de coder house",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backend",
+    "javascript",
+    "express",
+    "nodemon"
+  ],
+  "author": "jose angel coronado",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

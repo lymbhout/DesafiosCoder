@@ -1,1 +1,101 @@
-[{"id":1,"title":"camisa","descripcion":"camisa de algodon blanco","price":8.5,"thumbnail":"hdhdhdh","code":5,"stock":22},{"id":2,"title":"blusa","descripcion":"camisa de algodon blanco","price":8.5,"thumbnail":"hdhdhdh","code":3,"stock":22}]
+[
+    {
+        "id": 1,
+        "title": "camisa",
+        "descripcion": "blanca de lino puro",
+        "price": 5,
+        "thumbnail": "sin imagen",
+        "code": 9,
+        "stock": 20
+    },
+    {
+        "id": 2,
+        "title": "camisa",
+        "descripcion": "negra de lino puro",
+        "price": 5,
+        "thumbnail": "sin imagen",
+        "code": 10,
+        "stock": 25
+    },
+    {
+        "id": 3,
+        "title": "camisa",
+        "descripcion": "azul de lino puro",
+        "price": 10,
+        "thumbnail": "sin imagen",
+        "code": 11,
+        "stock": 20
+    },
+    {
+        "id": 4,
+        "title": "camisa",
+        "descripcion": "blanca de algodon",
+        "price": 28,
+        "thumbnail": "sin imagen",
+        "code": 12,
+        "stock": 20
+    },
+    {
+        "id": 5,
+        "title": "camisa",
+        "descripcion": "negra de algodon",
+        "price": 18,
+        "thumbnail": "sin imagen",
+        "code": 13,
+        "stock": 20
+    },
+    {
+        "id": 6,
+        "title": "camisa",
+        "descripcion": "azul de algodon",
+        "price": 18,
+        "thumbnail": "sin imagen",
+        "code": 14,
+        "stock": 20
+    },
+    {
+        "id": 7,
+        "title": "camisa",
+        "descripcion": "gris de algodon",
+        "price": 18,
+        "thumbnail": "sin imagen",
+        "code": 15,
+        "stock": 20
+    },
+    {
+        "id": 8,
+        "title": "camisa",
+        "descripcion": "gris de tela turca",
+        "price": 28,
+        "thumbnail": "sin imagen",
+        "code": 116,
+        "stock": 20
+    },
+    {
+        "id": 9,
+        "title": "camisa",
+        "descripcion": "blanca de tela peruana",
+        "price": 28,
+        "thumbnail": "sin imagen",
+        "code": 17,
+        "stock": 20
+    },
+    {
+        "id": 10,
+        "title": "camisa manga larga",
+        "descripcion": "blanca de tela peruana",
+        "price": 28,
+        "thumbnail": "sin imagen",
+        "code": 18,
+        "stock": 30
+    },
+    {
+        "id": 11,
+        "title": "camisa manga corta",
+        "descripcion": "blanca de tela peruana",
+        "price": 28,
+        "thumbnail": "sin imagen",
+        "code": 19,
+        "stock": 30
+    }
+]

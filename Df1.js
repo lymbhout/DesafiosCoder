@@ -5,7 +5,7 @@ class ProductManager  {
         this.products = [];
         this.path = path
     }
-    addProduct = (title,descripcion,price,thumbnail,code,stock) =>{
+    addProduct = async(title,descripcion,price,thumbnail,code,stock) =>{
         if(!title,!descripcion,!price,!thumbnail,!code,!stock){
             console.error('Los campocos title, descripcion,price,thumbnail,code and stock son requeridos!  ')
             return;
@@ -31,10 +31,6 @@ class ProductManager  {
         this.products.push(newproducts)
         const produArray = this.products
             console.log('Productos agregados\n');
-
-            (async function (run){
-                if(!run) return;
-
                 try {
                     console.log('  Escritura de archivos.\n')
                     console.log(' Iniciando la escritura...\n')
@@ -44,17 +40,12 @@ class ProductManager  {
                 } catch (error) {
                     console.log(error);
                 }
-                
-            })(true) 
             
         }
-        getProducts =()=>{
-        (async function (run){
-            if(!run) return;
-
+        getProducts = async()=>{
             try {
                 console.log('Lectura de archivo\n');
-                const lesctura = await fs.promises.readFile(Objeto1.path,'utf-8')
+                const lesctura = await fs.promises.readFile(this.path,'utf-8')
                 const lescturaJson = JSON.parse(lesctura)
                 console.log('Lectura realizada:');
                 return lescturaJson;
@@ -62,26 +53,21 @@ class ProductManager  {
                 console.log(error);
                 
             }
-        })(true)
     }
     
     getProductById = async (id)=>{
         try {
-
-            const lescturaByID = await fs.promises.readFile(Objeto1.path,'utf-8')
+            const lescturaByID = await fs.promises.readFile(this.path,'utf-8')
             const lescturaJsonByID = JSON.parse(lescturaByID)
             const findByID = lescturaJsonByID.find((fbid)=> fbid.id === id)
-            console.log(findByID);
+            return findByID;
         } catch (error) {
             console.log(error);
             
         }
     }
-
-
-            async updateProduct (id,updatedProduct){
-
-                const lescturaByID = await fs.promises.readFile(Objeto1.path,'utf-8')
+        async updateProduct (id,updatedProduct){
+                const lescturaByID = await fs.promises.readFile(this.path,'utf-8')
                 const products =  JSON.parse(lescturaByID)
                 const {title,description,price,thumbnail,code,stock}=updatedProduct
                 var productIndex=-10
@@ -113,7 +99,7 @@ class ProductManager  {
                 products[productIndex].stock=stock
                 }
                 const contenido = JSON.stringify(products)
-                await fs.promises.writeFile(Objeto1.path, contenido, 'utf-8')
+                await fs.promises.writeFile(this.path, contenido, 'utf-8')
                 console.log(`producto cambiado  `);
             
             }
@@ -137,5 +123,7 @@ class ProductManager  {
 
 
 
-// const Objeto1 = new  ProductManager('./text-output-file.json')
+// const Objeto1 = new ProductManager('./text-output-file.json')
+
+
 module.exports = ProductManager

@@ -40,7 +40,7 @@ class ProductManager  {
                     console.log(' Iniciando la escritura...\n')
                     const contenido = JSON.stringify(produArray)
                     console.log(' Finalizó la escritura.\n')
-                    await fs.promises.writeFile(Objeto1.path, contenido, 'utf-8')
+                    await fs.promises.writeFile(this.path, contenido, 'utf-8')
                 } catch (error) {
                     console.log(error);
                 }
@@ -56,8 +56,8 @@ class ProductManager  {
                 console.log('Lectura de archivo\n');
                 const lesctura = await fs.promises.readFile(Objeto1.path,'utf-8')
                 const lescturaJson = JSON.parse(lesctura)
-                console.log(lescturaJson);
                 console.log('Lectura realizada:');
+                return lescturaJson;
             } catch (error) {
                 console.log(error);
                 

@@ -9,18 +9,20 @@ Objeto1.addProduct('blusa','camisa de algodon blanco',8.5,'hdhdhdh',3,22)
 const app = express()
 
 app.use(express.urlencoded({extended:true}))
+app.use(express.json())
 
-let llamar = Objeto1.getProducts()
 
-console.log(llamar);
 
-app.get('/products',(req,res)=>{
+app.get('/products', async (req,res)=>{
     const {query} = req;
     const {limit}= query;
+    let llamar =  await ProductManager.getProducts()
+    console.log(llamar);
     if(!limit){
         res.json(Objeto1)
     }else{
-
+        const result = llamar.filter((product) => product.id <= parseInt(limit));
+        res.json(result);
     }
 })
 
